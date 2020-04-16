@@ -1,0 +1,28 @@
+type Query {
+    namen: [Name]
+    name(id: String): Name
+}
+
+type Mutation {
+    createName(input: CreateNameInput): Name
+    editName(input: EditNameInput): Name
+    deleteName(id: String): Boolean
+    copyName(id: String): Name
+}
+
+type Name {
+    id: String
+    vorname: String
+    nachname: String
+}
+
+input CreateNameInput {
+    vorname: String
+    nachname: String
+}
+
+input EditNameInput {
+    id: String
+    vorname: String
+    nachname: String
+}
